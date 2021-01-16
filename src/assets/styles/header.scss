@@ -1,0 +1,31 @@
+.header {
+  border-bottom: solid 1px $border-color;
+
+  &_wrap {
+    display: flex;
+    height: 96px;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  &-logo {
+    &_img {
+      max-height: 48px;
+      max-width: 48px;
+    }
+  }
+
+  &-menu {
+    flex: 1 auto;
+    margin-left: 48px;
+
+    .menu {
+      &_link {
+        &:after {
+          bottom: -5px;
+        }
+      }
+    }
+  }
+}

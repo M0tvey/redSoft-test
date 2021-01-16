@@ -1,0 +1,56 @@
+.footer {
+  background-color: #eceaea;
+  color: $footer-color;
+
+  a {
+    color: $footer-color;
+  }
+
+  &_wrap {
+    display: flex;
+    height: 96px;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  &-logo {
+    &_img {
+      max-height: 48px;
+      max-width: 48px;
+    }
+  }
+
+  &-menu {
+    flex: 1 auto;
+    margin-left: 48px;
+
+    .menu {
+      &_link {
+        &:after {
+          bottom: -5px;
+        }
+      }
+    }
+  }
+
+  &-contacts {
+    display: flex;
+    align-items: center;
+
+    &_item {
+      & + & {
+        margin-left: 50px;
+      }
+    }
+
+    &_icon {
+      fill: $footer-color;
+      fill: #555555;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 10px;
+      @include size(14px);
+    }
+  }
+}

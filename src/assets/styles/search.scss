@@ -1,0 +1,32 @@
+.search {
+  &_wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &_item {
+    background-color: transparent;
+    line-height: 48px;
+    min-width: 295px;
+    border-top: 1px solid $border-color;
+    border-right: 0;
+    border-bottom: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+    font-family: $body-font-family;
+    transition: all .4s ease;
+    letter-spacing: .4px;
+    padding: 0 16px;
+
+    &:focus {
+      border-color: $bttn-b-color;
+    }
+
+    &::placeholder {
+      color: #9F9F9F;
+    }
+  }
+
+  &_bttn {
+    min-width: 120px;
+  }
+}

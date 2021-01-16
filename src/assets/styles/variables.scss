@@ -1,0 +1,59 @@
+/*********************** mixins ***********************/
+@mixin size($height, $width: "") {
+  @if $width == "" {
+    $width: $height;
+  }
+  height: $height;
+  width: $width;
+}
+
+/************************* fonts ************************/
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../fonts/subset-Merriweather-Light.eot');
+    src: url('../fonts/subset-Merriweather-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/subset-Merriweather-Light.woff') format('woff'),
+        url('../fonts/subset-Merriweather-Light.ttf') format('truetype'),
+        url('../fonts/subset-Merriweather-Light.svg#Merriweather-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../fonts/subset-Merriweather-Regular.eot');
+    src: url('../fonts/subset-Merriweather-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/subset-Merriweather-Regular.woff') format('woff'),
+        url('../fonts/subset-Merriweather-Regular.ttf') format('truetype'),
+        url('../fonts/subset-Merriweather-Regular.svg#Merriweather-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../fonts/subset-Merriweather-Bold.eot');
+    src: url('../fonts/subset-Merriweather-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/subset-Merriweather-Bold.woff') format('woff'),
+        url('../fonts/subset-Merriweather-Bold.ttf') format('truetype'),
+        url('../fonts/subset-Merriweather-Bold.svg#Merriweather-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+/*********************** variable ***********************/
+$body-background-color: #f6f3f3;
+$text-color: #343030;
+$body-font-family: 'Merriweather', serif;
+$bttn-color: #F4F6F9;
+$bttn-b-color: #403432;
+$bttn-b-hover-color: #776763;
+$bttn-b-disabled-color: #C1B4B1;
+$bttn-b-active-color: #5B3A32;
+$border-color: #E1E1E1;
+$footer-color: #555555;

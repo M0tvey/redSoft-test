@@ -1,0 +1,114 @@
+.product {
+  background-color: $body-background-color;
+  padding-bottom: 95px;
+  position: relative;
+  height: 100%;
+  z-index: 10;
+
+  &s {
+    display: grid;
+    margin-top: 38px;
+    grid: min-content auto / 1fr 1fr 1fr 1fr;
+    grid-gap: 32px;
+  }
+
+  &_wrap {
+    background-color: $border-color;
+    padding: 1px;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    &.not-available {
+      .product {
+        &-image {
+          position: relative;
+          z-index: 1;
+
+          &_link:before {
+            background-color: rgba(255, 255, 255, .5);
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include size(100%);
+            z-index: 2;
+          }
+        }
+
+        &-title_link,
+        &-by_not-available {
+          color: $text-color + 80;
+        }
+      }
+    }
+
+    &:before {
+      content: "";
+      background: linear-gradient(to left, rgba(255,255,255,.0), rgba($bttn-b-color, .8), rgba(255,255,255,.0)) no-repeat 0 0%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: calc(-100% - 100px);
+      transform: skewX(-45deg);
+      @include size(100%, 200px);
+      z-index: 5;
+    }
+
+    &:hover:before {
+      transition: all .85s ease-in-out;
+      left: calc(100% + 200px);
+    }
+  }
+
+  &-image {
+    height: 100%;
+    max-width: 100%;
+
+    &_link {
+      display: flex;
+      height: 160px;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+  }
+
+  &-title {
+    font-size: 18px;
+    line-height: 150%;
+
+    &_wrap {
+      margin-top: 19px;
+      padding: 0 25px;
+    }
+  }
+
+  &-by {
+    &_wrap {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      width: calc(100% - 50px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 48px;
+    }
+
+    &_old-price {
+      color: #A0A0A0;
+      font-weight: 300;
+      line-height: 150%;
+      align-items: center;
+      text-decoration-line: line-through;
+    }
+
+    &_price,
+    &_not-available {
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+}

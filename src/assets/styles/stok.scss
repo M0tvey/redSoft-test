@@ -1,0 +1,104 @@
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+body {
+  background-color: $body-background-color;
+  font: normal 14px/1em $body-font-family;
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+}
+a {
+  text-decoration: none;
+  position: relative;
+  color: $text-color;
+
+  &:not([class*='no-s']):after {
+    background-color: $text-color;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    transition: all .4s ease;
+    width: 0;
+  }
+
+  &:hover{
+    &:after {
+      width: calc(100% + 10px);
+    }
+  }
+}
+
+.page {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.bttn {
+  background-color: $bttn-b-color;
+  color: $bttn-color;
+  border: 0;
+  font-family: $body-font-family;
+  height: 48px;
+  transition: all .4s ease;
+  min-width: 118px;
+  padding: 0;
+  text-align: center;
+
+  &--active {
+    background-color: $bttn-b-active-color;
+  }
+
+  &:hover {
+    background-color: $bttn-b-hover-color;
+    cursor: pointer;
+  }
+
+  &[disabled],
+  &--disabled {
+    background-color: $bttn-b-disabled-color;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .a {
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: all .5s linear;
+
+    &.hide {
+      opacity: 0;
+    }
+  }
+
+  .preloader {
+    height: 40px;
+    width: 80px;
+    fill: #fff;
+  }
+
+  .check {
+    height: 13px;
+    width: 16px;
+    fill: none;
+    stroke: $bttn-color;
+    margin-right: 7px;
+  }
+}
+.container {
+  margin: 0 auto;
+  max-width: 1216px;
+  width: 100%;
+}
